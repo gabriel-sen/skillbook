@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="card text-white bg-secondary col-md-6 offset-md-3 col-10 offset-1 cancel-col-padding">
+                <div class="card-header">Inscription</div>
+                <div class="card-body ">
+
+                    {{ form(form) }}
+                    <button type="button" class="btn btn-primary btn-md">Valider</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

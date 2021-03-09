@@ -1,0 +1,36 @@
+.display-none{
+    display: none;
+}
+
+body{
+    background-image: url(../img/BG_dark.svg);
+    background-size: cover;
+    background-position: bottom center;
+    height: 100vh;
+}
+
+body .card .card-header{
+    background-color:#0070AD;
+}
+
+body .cancel-col-padding{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.form-group input,
+.form-group select{
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.825rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+.form-group label {
+    margin-bottom: 0.25rem;
+}
+
+body .navbar{
+    padding: .25rem 1rem .25rem 1rem;
+}

@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,46 +18,23 @@ class Project
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="project_id")
+     * @ORM\Column(type="string", length=255)
      */
     private $project_name;
-
-    public function __construct()
-    {
-        $this->project_name = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getProjectName(): Collection
+    public function getProjectName(): ?string
     {
         return $this->project_name;
     }
 
-    public function addProjectName(User $projectName): self
+    public function setProjectName(string $project_name): self
     {
-        if (!$this->project_name->contains($projectName)) {
-            $this->project_name[] = $projectName;
-            $projectName->setProjectId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeProjectName(User $projectName): self
-    {
-        if ($this->project_name->removeElement($projectName)) {
-            // set the owning side to null (unless already changed)
-            if ($projectName->getProjectId() === $this) {
-                $projectName->setProjectId(null);
-            }
-        }
+        $this->project_name = $project_name;
 
         return $this;
     }

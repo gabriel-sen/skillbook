@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="655effbf-aacd-4ab5-9238-881a1b122602" name="Default Changelist" comment="Ajout vendor sinon re-instal impossible">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/header.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/mySpace.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2acf3537-6c21-434b-9791-2d3243f24f5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2acf3537-6c21-434b-9791-2d3243f24f5f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a382ebec-bd73-4db0-a83f-126876cf0175.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a382ebec-bd73-4db0-a83f-126876cf0175/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e4033096-a66f-4674-be84-253a37860f25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e4033096-a66f-4674-be84-253a37860f25/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Skills.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Skills.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +173,9 @@
       <updated>1614609369683</updated>
       <workItem from="1614609370835" duration="2423000" />
       <workItem from="1614641331484" duration="3247000" />
+      <workItem from="1615200635391" duration="2230000" />
+      <workItem from="1615271119559" duration="2832000" />
+      <workItem from="1615307307874" duration="16749000" />
     </task>
     <task id="LOCAL-00001" summary="Création du projet + création de la première home.">
       <created>1614642628270</created>

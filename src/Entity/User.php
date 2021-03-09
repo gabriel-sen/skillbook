@@ -44,28 +44,28 @@ class User
     private $password;
 
     /**
-     * @ORM\OneToOne(targetEntity=role::class, inversedBy="role_name", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity=Role::class, inversedBy="role_name", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $role_id;
+    private $role;
 
     /**
-     * @ORM\ManyToOne(targetEntity=skills::class, inversedBy="skill_name")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=Skills::class, inversedBy="skill_name")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $skills_id;
+    private $skills;
 
     /**
      * @ORM\ManyToOne(targetEntity=BusinessUnit::class, inversedBy="bu_name")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $bu_id;
+    private $bu;
 
     /**
-     * @ORM\ManyToOne(targetEntity=project::class, inversedBy="project_name")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="project_name")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $project_id;
+    private $project;
 
 
     public function getId(): ?int
@@ -133,50 +133,50 @@ class User
         return $this;
     }
 
-    public function getRoleId(): ?role
+    public function getRole(): ?role
     {
-        return $this->role_id;
+        return $this->role;
     }
 
-    public function setRoleId(role $role_id): self
+    public function setRole(role $role): self
     {
-        $this->role_id = $role_id;
+        $this->role = $role;
 
         return $this;
     }
 
-    public function getSkillsId(): ?skills
+    public function getSkills(): ?skills
     {
-        return $this->skills_id;
+        return $this->skills;
     }
 
-    public function setSkillsId(?skills $skills_id): self
+    public function setSkills(?skills $skills): self
     {
-        $this->skills_id = $skills_id;
+        $this->skills = $skills;
 
         return $this;
     }
 
-    public function getBuId(): ?BusinessUnit
+    public function getBu(): ?BusinessUnit
     {
-        return $this->bu_id;
+        return $this->bu;
     }
 
-    public function setBuId(?BusinessUnit $bu_id): self
+    public function setBu(?BusinessUnit $bu): self
     {
-        $this->bu_id = $bu_id;
+        $this->bu = $bu;
 
         return $this;
     }
 
-    public function getProjectId(): ?project
+    public function getProject(): ?project
     {
-        return $this->project_id;
+        return $this->project;
     }
 
-    public function setProjectId(?project $project_id): self
+    public function setProject(?project $project): self
     {
-        $this->project_id = $project_id;
+        $this->project = $project;
 
         return $this;
     }

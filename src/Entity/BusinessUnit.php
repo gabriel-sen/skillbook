@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\BusinessUnitRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,48 +18,24 @@ class BusinessUnit
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="bu_id")
+     * @ORM\Column(type="string", length=255)
      */
     private $bu_name;
-
-    public function __construct()
-    {
-        $this->bu_name = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getBuName(): Collection
+    public function getBuName(): ?string
     {
         return $this->bu_name;
     }
 
-    public function addBuName(User $buName): self
+    public function setBuName(string $bu_name): self
     {
-        if (!$this->bu_name->contains($buName)) {
-            $this->bu_name[] = $buName;
-            $buName->setBuId($this);
-        }
+        $this->bu_name = $bu_name;
 
         return $this;
     }
-
-    public function removeBuName(User $buName): self
-    {
-        if ($this->bu_name->removeElement($buName)) {
-            // set the owning side to null (unless already changed)
-            if ($buName->getBuId() === $this) {
-                $buName->setBuId(null);
-            }
-        }
-
-        return $this;
-    }
-
 }

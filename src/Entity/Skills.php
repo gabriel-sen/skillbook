@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\SkillsRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,46 +18,23 @@ class Skills
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="skills_id")
+     * @ORM\Column(type="string", length=30)
      */
-    private $skill_name;
-
-    public function __construct()
-    {
-        $this->skill_name = new ArrayCollection();
-    }
+    private $skills_name;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getSkillName(): Collection
+    public function getSkillsName(): ?string
     {
-        return $this->skill_name;
+        return $this->skills_name;
     }
 
-    public function addSkillName(User $skillName): self
+    public function setSkillsName(string $skills_name): self
     {
-        if (!$this->skill_name->contains($skillName)) {
-            $this->skill_name[] = $skillName;
-            $skillName->setSkillsId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSkillName(User $skillName): self
-    {
-        if ($this->skill_name->removeElement($skillName)) {
-            // set the owning side to null (unless already changed)
-            if ($skillName->getSkillsId() === $this) {
-                $skillName->setSkillsId(null);
-            }
-        }
+        $this->skills_name = $skills_name;
 
         return $this;
     }

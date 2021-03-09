@@ -18,22 +18,17 @@ class Role
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="role_id", cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=180)
      */
     private $role_name;
 
-    public function getRoleName(): ?User
+    public function getRoleName(): ?string
     {
         return $this->role_name;
     }
 
-    public function setRoleName(User $role_name): self
+    public function setRoleName(string $role_name): self
     {
-        // set the owning side of the relation if necessary
-        if ($role_name->getRoleId() !== $this) {
-            $role_name->setRoleId($this);
-        }
-
         $this->role_name = $role_name;
 
         return $this;

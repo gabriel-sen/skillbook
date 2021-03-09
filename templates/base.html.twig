@@ -3,11 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block header %}
+                {% include 'header.html.twig' %}
+            {% endblock %}
+            {% block content %}
+
+            {% endblock %}
+            {% block footer %}
+
+            {% endblock %}
+        {% endblock %}
     </body>
 </html>
