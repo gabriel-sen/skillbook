@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="`user`")
+ * @ORM\Table(name="user")
  */
 class User
 {
@@ -44,29 +46,33 @@ class User
     private $password;
 
     /**
-     * @ORM\OneToOne(targetEntity=Role::class, inversedBy="role_name", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity=Role::class, inversedBy="role_name", mappedBy="user")
      * @ORM\JoinColumn(nullable=true)
      */
     private $role;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Skills::class, inversedBy="skill_name")
+     * @ORM\ManyToMany(targetEntity=Skills::class, inversedBy="skill_name", mappedBy="user")
      * @ORM\JoinColumn(nullable=true)
      */
     private $skills;
 
     /**
-     * @ORM\ManyToOne(targetEntity=BusinessUnit::class, inversedBy="bu_name")
+     * @ORM\ManyToMany(targetEntity=BusinessUnit::class, inversedBy="bu_name", mappedBy="user")
      * @ORM\JoinColumn(nullable=true)
      */
     private $bu;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="project_name")
+     * @ORM\ManyToMany(targetEntity=Project::class, inversedBy="project_name",mappedBy="user")
      * @ORM\JoinColumn(nullable=true)
      */
     private $project;
 
+    public function __construct()
+    {
+        $this->skills = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -133,50 +139,52 @@ class User
         return $this;
     }
 
-    public function getRole(): ?role
+    public function getRole(): ?string
     {
         return $this->role;
     }
 
     public function setRole(role $role): self
     {
-        $this->role = $role;
+        $this->role[] = $role;
 
         return $this;
     }
 
-    public function getSkills(): ?skills
+    /**
+     * @return Collection|Skills[]
+     */
+    public function getSkills(): Collection
     {
         return $this->skills;
     }
 
     public function setSkills(?skills $skills): self
     {
-        $this->skills = $skills;
-
+        $this->skills[] = $skills;
         return $this;
     }
 
-    public function getBu(): ?BusinessUnit
+    public function getBu(): ?string
     {
         return $this->bu;
     }
 
     public function setBu(?BusinessUnit $bu): self
     {
-        $this->bu = $bu;
+        $this->bu[] = $bu;
 
         return $this;
     }
 
-    public function getProject(): ?project
+    public function getProject(): ?string
     {
         return $this->project;
     }
 
     public function setProject(?project $project): self
     {
-        $this->project = $project;
+        $this->project[] = $project;
 
         return $this;
     }

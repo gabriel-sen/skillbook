@@ -7,9 +7,12 @@ use App\Entity\Project;
 use App\Entity\Skills;
 use App\Entity\User;
 use App\Entity\Role;
+use Doctrine\Common\Collections\ArrayCollection;
+use phpDocumentor\Reflection\Types\Nullable;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -61,7 +64,7 @@ class RegisterFormType extends AbstractType
                 'choice_label'=> 'role_name',
                 'multiple' => false
             ])
-            ->add('skills', EntityType::class, [
+            ->add('skills',EntityType::class, [
                 'class' => Skills::class,
                 'label' => "Compétences",
                 'choice_label'=> 'skills_name',
