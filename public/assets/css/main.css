@@ -34,3 +34,67 @@ body .cancel-col-padding{
 body .navbar{
     padding: .25rem 1rem .25rem 1rem;
 }
+
+.form_skills_container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form_skills_container label.form-check-label{
+
+}
+.form_skills_container .form-check input,
+.form_skills_container .form-check select{
+    height: calc(.5em + 0.5rem + 2px);
+}
+.form_skills_container .form-check {
+    margin-right: 1.5rem;
+}
+
+
+/*Stepper by Alex R. https://codepen.io/alexrdz/pen/MXrdMw */
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+/*.stepwizard-row:before {
+    top: 1.25rem;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+}
+*/
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+
