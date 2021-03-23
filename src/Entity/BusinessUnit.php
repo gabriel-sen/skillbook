@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BusinessUnitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,22 +21,26 @@ class BusinessUnit
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $bu_name;
+    private $name;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="businessUnits")
+     */
+    private $users;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getBuName(): ?string
+    public function name(): ?string
     {
-        return $this->bu_name;
-    }
-
-    public function setBuName(string $bu_name): self
-    {
-        $this->bu_name = $bu_name;
-
-        return $this;
+        return $this->name;
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\RoleRepository;
+use App\Repository\SkillRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=RoleRepository::class)
+ * @ORM\Entity(repositoryClass=SkillRepository::class)
  */
-class Role
+class Skill
 {
     /**
      * @ORM\Id
@@ -24,7 +24,7 @@ class Role
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="roles")
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="skills")
      */
     private $users;
 
@@ -38,7 +38,7 @@ class Role
     {
         return $this->id;
     }
-    
+
     public function name(): ?string
     {
         return $this->name;

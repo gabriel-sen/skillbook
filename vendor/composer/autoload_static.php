@@ -558,7 +558,20 @@ class ComposerStaticInit0f9eed285c59303f64c889a0446f8ad5
     );
 
     public static $classMap = array (
+        'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
+        'App\\Controller\\RegisterController' => __DIR__ . '/../..' . '/src/Controller/RegisterController.php',
+        'App\\Entity\\BusinessUnit' => __DIR__ . '/../..' . '/src/Entity/BusinessUnit.php',
+        'App\\Entity\\Project' => __DIR__ . '/../..' . '/src/Entity/Project.php',
+        'App\\Entity\\Role' => __DIR__ . '/../..' . '/src/Entity/Role.php',
+        'App\\Entity\\Skill' => __DIR__ . '/../..' . '/src/Entity/Skill.php',
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Form\\RegisterFormType' => __DIR__ . '/../..' . '/src/Form/RegisterFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\BusinessUnitRepository' => __DIR__ . '/../..' . '/src/Repository/BusinessUnitRepository.php',
+        'App\\Repository\\ProjectRepository' => __DIR__ . '/../..' . '/src/Repository/ProjectRepository.php',
+        'App\\Repository\\RoleRepository' => __DIR__ . '/../..' . '/src/Repository/RoleRepository.php',
+        'App\\Repository\\SkillRepository' => __DIR__ . '/../..' . '/src/Repository/SkillRepository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

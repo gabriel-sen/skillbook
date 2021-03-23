@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -46,32 +47,35 @@ class User
     private $password;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Role::class, inversedBy="role_name", mappedBy="user")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToMany(targetEntity=Role::class, inversedBy="users", cascade={"persist"})
+     * @JoinTable(name="user_roles")
      */
-    private $role;
+    private $roles;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Skills::class, inversedBy="skill_name", mappedBy="user")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToMany(targetEntity=Skill::class, inversedBy="users", cascade={"persist"})
+     * @JoinTable(name="user_skills")
      */
     private $skills;
 
     /**
-     * @ORM\ManyToMany(targetEntity=BusinessUnit::class, inversedBy="bu_name", mappedBy="user")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToMany(targetEntity=BusinessUnit::class, inversedBy="users", cascade={"persist"})
+     * @JoinTable(name="user_business_units")
      */
-    private $bu;
+    private $businessUnits;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Project::class, inversedBy="project_name",mappedBy="user")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToMany(targetEntity=Project::class, inversedBy="users", cascade={"persist"})
+     * @JoinTable(name="user_projects")
      */
-    private $project;
+    private $projects;
 
     public function __construct()
     {
         $this->skills = new ArrayCollection();
+        $this->businessUnits = new ArrayCollection();
+        $this->roles = new ArrayCollection();
+        $this->projects = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -139,54 +143,79 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(role $role): self
-    {
-        $this->role[] = $role;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Skills[]
-     */
-    public function getSkills(): Collection
+    public function getSkills(): ArrayCollection
     {
         return $this->skills;
     }
 
-    public function setSkills(?skills $skills): self
+    public function addSkill(Skill $skill): void
     {
-        $this->skills[] = $skills;
-        return $this;
+        if ($this->skills->contains($skill)) {
+            return;
+        }
+
+        $this->skills->add($skill);
     }
 
-    public function getBu(): ?string
+    public function getBusinessUnits(): Collection
     {
-        return $this->bu;
+        return $this->businessUnits;
     }
 
-    public function setBu(?BusinessUnit $bu): self
+    public function addBusinessUnit(BusinessUnit $businessUnit): void
     {
-        $this->bu[] = $bu;
+        if ($this->businessUnits->contains($businessUnit)) {
+            return;
+        }
 
-        return $this;
+        $this->businessUnits->add($businessUnit);
     }
 
-    public function getProject(): ?string
+    public function getProject(): ArrayCollection
     {
-        return $this->project;
+        return $this->projects;
     }
 
-    public function setProject(?project $project): self
+    public function addProject(Project $project): void
     {
-        $this->project[] = $project;
+        if ($this->projects->contains($project)) {
+            return;
+        }
 
-        return $this;
+        $this->projects->add($project);
     }
 
+    public function getRoles(): ArrayCollection
+    {
+        return $this->roles;
+    }
+
+    public function addRole(Role $role): void
+    {
+        if ($this->roles->contains($role)) {
+            return;
+        }
+
+        $this->roles->add($role);
+    }
+
+    public function register(
+        array $businessUnits,
+        array $skills,
+        array $projects,
+        array $roles
+    ): void {
+        foreach ($businessUnits as $businessUnit) {
+            $this->addBusinessUnit($businessUnit);
+        }
+        foreach ($skills as $skill) {
+            $this->addSkill($skill);
+        }
+        foreach ($projects as $project) {
+            $this->addProject($project);
+        }
+        foreach ($roles as $role) {
+            $this->addRole($role);
+        }
+    }
 }

@@ -2,17 +2,8 @@
 
 namespace App\Form;
 
-use App\Entity\BusinessUnit;
-use App\Entity\Project;
-use App\Entity\Skills;
 use App\Entity\User;
-use App\Entity\Role;
-use Doctrine\Common\Collections\ArrayCollection;
-use phpDocumentor\Reflection\Types\Nullable;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class RegisterFormType extends AbstractType
+final class RegisterFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -58,29 +49,6 @@ class RegisterFormType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Jean@14324'
                 ]
-            ])
-            ->add('role', EntityType::class, [
-                'class' => Role::class,
-                'choice_label'=> 'role_name',
-                'multiple' => false
-            ])
-            ->add('skills',EntityType::class, [
-                'class' => Skills::class,
-                'label' => "Compétences",
-                'choice_label'=> 'skills_name',
-                'multiple' => true,
-                'expanded' => true
-            ])
-            ->add('bu', EntityType::class, [
-                'class' => BusinessUnit::class,
-                'label' => 'Unités de Business',
-                'choice_label'=> 'bu_name',
-                'multiple' => false
-            ])
-            ->add('project', EntityType::class, [
-                'class' => Project::class,
-                'choice_label'=> 'project_name',
-                'multiple' => false
             ])
             ->add('submit', SubmitType::class,[
                 'label' => "S'inscrire"

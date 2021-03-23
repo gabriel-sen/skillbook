@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="655effbf-aacd-4ab5-9238-881a1b122602" name="Default Changelist" comment="Ajout de bootstrap / Création de la page inscription / creation du header conditionné / création du formulaire comportant des EntityType::class qui récupèrent les données depuis les tables /  ajout de jeux de données en BDD.">
-      <change afterPath="$PROJECT_DIR$/public/assets/js/hide-show.js" afterDir="false" />
+    <list default="true" id="655effbf-aacd-4ab5-9238-881a1b122602" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Repository/SkillRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/debug.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2acf3537-6c21-434b-9791-2d3243f24f5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2acf3537-6c21-434b-9791-2d3243f24f5f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/img/iconecap.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210303073555.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210309193528.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210309193957.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210309194157.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210309194359.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Skills.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Skill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/RegisterFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegisterFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BusinessUnitRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BusinessUnitRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProjectRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RoleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RoleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SkillsRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/register/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" afterDir="false" />
+    </list>
+    <list id="bff854bb-1028-455b-adb7-a0aae8cb7f65" name="Changes by everytimeicob" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +52,78 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Entity/BusinessUnit.php">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="bff854bb-1028-455b-adb7-a0aae8cb7f65" />
+        <range start1="22" end1="23" start2="23" end2="35" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="29" end1="30" start2="41" end2="42" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="31" end1="32" start2="43" end2="44" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="33" end1="40" start2="45" end2="45" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Entity/Role.php">
+      <ranges>
+        <range start1="5" end1="6" start2="5" end2="6" changelist="bff854bb-1028-455b-adb7-a0aae8cb7f65" />
+        <range start1="21" end1="22" start2="21" end2="22" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="23" end1="24" start2="23" end2="29" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="25" end1="26" start2="30" end2="42" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="27" end1="28" start2="43" end2="44" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="29" end1="37" start2="45" end2="45" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Entity/User.php">
+      <ranges>
+        <range start1="8" end1="8" start2="8" end2="9" changelist="bff854bb-1028-455b-adb7-a0aae8cb7f65" />
+        <range start1="48" end1="50" start2="49" end2="51" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="51" end1="52" start2="52" end2="53" changelist="bff854bb-1028-455b-adb7-a0aae8cb7f65" />
+        <range start1="54" end1="56" start2="55" end2="57" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="60" end1="62" start2="61" end2="63" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="63" end1="64" start2="64" end2="65" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="66" end1="68" start2="67" end2="69" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="69" end1="70" start2="70" end2="71" changelist="bff854bb-1028-455b-adb7-a0aae8cb7f65" />
+        <range start1="74" end1="74" start2="75" end2="78" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="141" end1="157" start2="145" end2="146" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="161" end1="162" start2="150" end2="151" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="163" end1="165" start2="152" end2="157" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="167" end1="168" start2="159" end2="160" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="169" end1="170" start2="161" end2="162" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="172" end1="173" start2="164" end2="165" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="174" end1="175" start2="166" end2="169" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="176" end1="177" start2="170" end2="171" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="179" end1="180" start2="173" end2="174" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="181" end1="182" start2="175" end2="176" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="184" end1="185" start2="178" end2="179" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="186" end1="187" start2="180" end2="183" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="188" end1="189" start2="184" end2="185" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="191" end1="192" start2="187" end2="197" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="193" end1="193" start2="198" end2="221" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Entity/Project.php">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="bff854bb-1028-455b-adb7-a0aae8cb7f65" />
+        <range start1="22" end1="23" start2="23" end2="35" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="29" end1="30" start2="41" end2="42" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="31" end1="32" start2="43" end2="44" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="33" end1="40" start2="45" end2="45" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Controller/RegisterController.php">
+      <ranges>
+        <range start1="6" end1="6" start2="6" end2="12" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="8" end1="8" start2="14" end2="15" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="12" end1="12" start2="19" end2="31" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="15" end1="18" start2="34" end2="42" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="19" end1="19" start2="43" end2="44" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="20" end1="21" start2="45" end2="45" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="22" end1="22" start2="46" end2="52" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="23" end1="24" start2="53" end2="54" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="26" end1="27" start2="56" end2="92" changelist="655effbf-aacd-4ab5-9238-881a1b122602" />
+        <range start1="30" end1="31" start2="95" end2="100" changelist="bff854bb-1028-455b-adb7-a0aae8cb7f65" />
+      </ranges>
+    </file>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -139,12 +242,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SkillBookZero" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\skillbook\templates" />
       <recent name="C:\wamp64\www\skillbook\public\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -164,7 +269,9 @@
       <workItem from="1614641331484" duration="3247000" />
       <workItem from="1615200635391" duration="2230000" />
       <workItem from="1615271119559" duration="2832000" />
-      <workItem from="1615307307874" duration="31858000" />
+      <workItem from="1615307307874" duration="58451000" />
+      <workItem from="1615542670148" duration="11120000" />
+      <workItem from="1615649305166" duration="76000" />
     </task>
     <task id="LOCAL-00001" summary="Création du projet + création de la première home.">
       <created>1614642628270</created>
@@ -187,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615324507259</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Stepper dans la vue de l'insecription / modification du champs Type de skills pour afficher des btn radios.">
+      <created>1615376704445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615376704445</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +328,7 @@
     <MESSAGE value="Création du projet + création de la première home." />
     <MESSAGE value="Ajout vendor sinon re-instal impossible" />
     <MESSAGE value="Ajout de bootstrap / Création de la page inscription / creation du header conditionné / création du formulaire comportant des EntityType::class qui récupèrent les données depuis les tables /  ajout de jeux de données en BDD." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de bootstrap / Création de la page inscription / creation du header conditionné / création du formulaire comportant des EntityType::class qui récupèrent les données depuis les tables /  ajout de jeux de données en BDD." />
+    <MESSAGE value="Stepper dans la vue de l'insecription / modification du champs Type de skills pour afficher des btn radios." />
+    <option name="LAST_COMMIT_MESSAGE" value="Stepper dans la vue de l'insecription / modification du champs Type de skills pour afficher des btn radios." />
   </component>
 </project>

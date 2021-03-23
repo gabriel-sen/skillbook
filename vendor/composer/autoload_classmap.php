@@ -6,7 +6,20 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\HomeController' => $baseDir . '/src/Controller/HomeController.php',
+    'App\\Controller\\RegisterController' => $baseDir . '/src/Controller/RegisterController.php',
+    'App\\Entity\\BusinessUnit' => $baseDir . '/src/Entity/BusinessUnit.php',
+    'App\\Entity\\Project' => $baseDir . '/src/Entity/Project.php',
+    'App\\Entity\\Role' => $baseDir . '/src/Entity/Role.php',
+    'App\\Entity\\Skill' => $baseDir . '/src/Entity/Skill.php',
+    'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
+    'App\\Form\\RegisterFormType' => $baseDir . '/src/Form/RegisterFormType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
+    'App\\Repository\\BusinessUnitRepository' => $baseDir . '/src/Repository/BusinessUnitRepository.php',
+    'App\\Repository\\ProjectRepository' => $baseDir . '/src/Repository/ProjectRepository.php',
+    'App\\Repository\\RoleRepository' => $baseDir . '/src/Repository/RoleRepository.php',
+    'App\\Repository\\SkillRepository' => $baseDir . '/src/Repository/SkillRepository.php',
+    'App\\Repository\\UserRepository' => $baseDir . '/src/Repository/UserRepository.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Collator' => $vendorDir . '/symfony/intl/Resources/stubs/Collator.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

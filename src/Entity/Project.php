@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,22 +21,26 @@ class Project
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $project_name;
+    private $name;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="projects")
+     */
+    private $users;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getProjectName(): ?string
+    public function name(): ?string
     {
-        return $this->project_name;
-    }
-
-    public function setProjectName(string $project_name): self
-    {
-        $this->project_name = $project_name;
-
-        return $this;
+        return $this->name;
     }
 }
