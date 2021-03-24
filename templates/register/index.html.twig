@@ -2,7 +2,7 @@
 {% block title %}Inscription{% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid register">
 
         <div class="row">
             <div class="card text-white bg-secondary col-md-6 offset-md-3 col-10 offset-1 cancel-col-padding">
@@ -36,32 +36,49 @@
                         </div>
                         <div class="row setup-content" id="step-2">
                                 <div class="col-md-12">
-                                    <select name="businessUnits[]" multiple>
-                                        {% for businessUnit in businessUnits %}
-                                            <option value="{{ businessUnit.id }}">{{ businessUnit.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <select name="roles[]" multiple>
-                                        {% for role in roles %}
-                                            <option value="{{ role.id }}">{{ role.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <select name="projects[]" multiple>
-                                        {% for project in projects %}
-                                            <option value="{{ project.id }}">{{ project.name }}</option>
-                                        {% endfor %}
-                                    </select>
+                                    <div class="form-group">
+                                        <label>Votre unité de business :</label>
+                                        <select name="businessUnits[]"
+                                                class="form-select col-md-12"
+                                        >
+                                            {% for businessUnit in businessUnits %}
+                                                <option value="{{ businessUnit.id }}">{{ businessUnit.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Votre Rôle :</label>
+                                        <select name="roles[]"
+                                                class="form-select col-md-12"
+                                                >
+                                            {% for role in roles %}
+                                                <option value="{{ role.id }}">{{ role.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Votre projet :</label>
+                                        <select
+                                                name="projects[]"
+                                                class="form-select col-md-12"
+                                                >
+                                            {% for project in projects %}
+                                                <option value="{{ project.id }}">{{ project.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
 
-                                    <div class="form_skills_container">
+                                    <label>Vos compétences :</label>
+                                    <div class="form_skills_container col-md-12">
                                     {% for skill in skills %}
-                                        <label for="skill-{{ skill.id }}">
-                                            {{ skill.name }}
+                                        <label for="skill-{{ skill.id }}" class="form-check form-check-custom-radius">
                                             <input
                                                     id="skill-{{ skill.id }}"
                                                     type="checkbox"
                                                     name="skills[]"
                                                     value="{{ skill.id }}"
                                             />
+                                            {{ skill.name }}
                                         </label>
                                     {% endfor %}
                                     </div>

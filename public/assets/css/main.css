@@ -1,6 +1,11 @@
+/* styles génériques */
+
 .display-none{
     display: none;
 }
+
+
+/* styles du body */
 
 body{
     background-image: url(../img/BG_dark.svg);
@@ -38,18 +43,51 @@ body .navbar{
 .form_skills_container{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
-.form_skills_container label.form-check-label{
 
-}
 .form_skills_container .form-check input,
 .form_skills_container .form-check select{
     height: calc(.5em + 0.5rem + 2px);
 }
-.form_skills_container .form-check {
-    margin-right: 1.5rem;
+
+.register .form-check-custom-radius input{
+    display: none;
 }
+.register .form-check-custom-radius {
+    margin-right: .7rem;
+    margin-bottom: .7rem;
+    border: solid .12rem;
+    padding: 0rem .5rem;
+    border-radius: 1rem;
+    border-color: #0070AD;
+    font-size: .8rem;
+}
+.register .form-check-custom-radius:hover,
+.register .form-check-custom-radius:focus{
+    background-color:rgba(0, 112, 173,.4);
+}
+.register .form-check-custom-radius.selected {
+    Background-color: #0070AD;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Stepper by Alex R. https://codepen.io/alexrdz/pen/MXrdMw */
