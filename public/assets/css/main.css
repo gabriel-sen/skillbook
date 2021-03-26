@@ -5,6 +5,7 @@
 }
 
 
+
 /* styles du body */
 
 body{
@@ -46,9 +47,9 @@ body .navbar{
     margin-bottom: 1rem;
 }
 
-
-.form_skills_container .form-check input,
-.form_skills_container .form-check select{
+/* register */
+.register.form_skills_container .form-check input,
+.register .form_skills_container .form-check select{
     height: calc(.5em + 0.5rem + 2px);
 }
 
@@ -73,6 +74,10 @@ body .navbar{
 }
 
 
+/* login */
+.login-row-margin-top25{
+
+}
 
 
 

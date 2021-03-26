@@ -1,23 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Homepage {% endblock %}
+{% block title %}Login{% endblock %}
 
-{% block body %}
 
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-        <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus</a>
+{% block content %}
+    <div class="container-fluid login">
+        <div class="row login-row-margin-top25">
+            <div class="card text-white bg-secondary col-md-4 offset-md-4 col-10 offset-1 cancel-col-padding">
+                <div class="card-header">
+                    Login
+                </div>
+                <div class="card-body">
+                    <form role="form" action="" method="post">
+                        <form action="" method="post" name="login">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Password</label>
+                                <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                            </div>
+                            <div class="form-group">
+                                <p class="text-center">text informatif RGPD <a href="#">voir ici</a></p>
+                            </div>
+
+                        </form>
+                <div class="card-footer">
+                    <div class="col-md-12 text-center ">
+                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-<div class="example-wrapper">
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-</div>
 {% endblock %}
