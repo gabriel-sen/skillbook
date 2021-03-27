@@ -10,14 +10,16 @@ use App\Repository\RoleRepository;
 use App\Repository\SkillRepository;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\Criteria;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegisterController extends AbstractController
 {
-    /**
+    /** POUR TESTER
      * @Route("/{id}/debug")
      */
     public function foo(
@@ -29,11 +31,16 @@ class RegisterController extends AbstractController
         ]);
     }
 
+    public function __construct(EntityManagerInterface $entityManager){
+        $this->entityManager = $entityManager;
+    }
+
     /**
      * @Route("/inscription", name="register")
      */
     public function index(
         Request $request,
+        UserPasswordEncoderInterface $encoder,
         SkillRepository $skillRepository,
         BusinessUnitRepository $businessUnitRepository,
         RoleRepository $roleRepository,
@@ -53,6 +60,7 @@ class RegisterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             /** @var User $user */
             $user = $form->getData();
+
 
             $user->register(
                 $businessUnits->matching(
@@ -89,6 +97,9 @@ class RegisterController extends AbstractController
                 )->toArray()
             );
 
+            $password = $encoder->encodePassword($user,$user->getPassword()) ;
+            $user ->setPassword($password);
+            /* test dd($password) ok */
             $userRepository->add($user);
         }
 
