@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
 
 final class RegisterFormType extends AbstractType
 {
@@ -21,18 +22,30 @@ final class RegisterFormType extends AbstractType
             ])
             ->add('firstname',TextType::class, [
                 'label' => 'Prénom',
+                'constraints' => new Length( [
+                    'min' => 2,
+                    'max' => 30
+                ]),
                 'attr' => [
                     'placeholder' => 'Jean '
                 ]
             ])
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
+                'constraints' => new Length( [
+                    'min' => 2,
+                    'max' => 30
+                ]),
                 'attr' => [
                     'placeholder' => 'Codeur '
                 ]
             ])
             ->add('email', EmailType::class, [
                 'label' => 'email',
+                'constraints' => new Length( [
+                    'min' => 2,
+                    'max' => 30
+                ]),
                 'attr' => [
                     'placeholder' => 'Jean-codeur@campus-eni.fr'
                 ]
@@ -40,14 +53,14 @@ final class RegisterFormType extends AbstractType
             ->add('password', PasswordType::class, [
                 'label' => 'Mot de passe :',
                 'attr' => [
-                    'placeholder' => 'Jean@14324'
+                    'placeholder' => 'ex: Jean@14324'
                 ]
             ])
             ->add('password_confirm', PasswordType::class, [
                 'label' => 'Confirmez votre mot de passe',
                 'mapped' => false,
                 'attr' => [
-                    'placeholder' => 'Jean@14324'
+                    'placeholder' => 'ex: Jean@14324'
                 ]
             ])
             ->add('submit', SubmitType::class,[

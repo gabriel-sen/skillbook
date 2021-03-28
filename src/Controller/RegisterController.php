@@ -100,6 +100,9 @@ class RegisterController extends AbstractController
             $password = $encoder->encodePassword($user,$user->getPassword()) ;
             $user ->setPassword($password);
             /* test dd($password) ok */
+
+
+
             $userRepository->add($user);
         }
 

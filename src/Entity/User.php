@@ -186,9 +186,10 @@ class User implements UserInterface
         $this->projects->add($project);
     }
 
-    public function getRoles(): ArrayCollection
+    public function getRoles(): array
     {
-        return $this->roles;
+        $roles[] = 'ROLE_USER';
+        return array_unique($roles);
     }
 
     public function addRole(Role $role): void

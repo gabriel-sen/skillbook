@@ -8,84 +8,85 @@
             <div class="card text-white bg-secondary col-md-6 offset-md-3 col-10 offset-1 cancel-col-padding">
                 <div class="card-header">Inscription</div>
                 <div class="card-body">
-
                     <form role="form" action="" method="post">
-                        <div class="row setup-content" id="step-1">
-                            <div class="col-md-12">
-                                {{ form_start(form) }}
-                                {{ form_row(form.avatar) }}
-                                {{ form_row(form.firstname) }}
-                                {{ form_row(form.lastname) }}
-                                {{ form_row(form.email) }}
-                                {{ form_row(form.password) }}
-                                {{ form_row(form.password_confirm) }}
+                        <div class="col-md-12">
+                            {{ form_start(form) }}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form_row(form.firstname) }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form_row(form.lastname) }}
+                                </div>
                             </div>
+                            {{ form_row(form.email) }}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form_row(form.password) }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form_row(form.password_confirm) }}
+                                </div>
+                            </div>
+                            {{ form_row(form.avatar) }}
                         </div>
-                        <div class="row setup-content" id="step-2">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Votre unité de business :</label>
-                                        <select name="businessUnits[]"
-                                                class="form-select col-md-12"
-                                        >
-                                            {% for businessUnit in businessUnits %}
-                                                <option value="{{ businessUnit.id }}">{{ businessUnit.name }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Votre unité de business :</label>
+                                <select name="businessUnits[]"
+                                        class="form-select col-md-12"
+                                >
+                                    {% for businessUnit in businessUnits %}
+                                        <option value="{{ businessUnit.id }}">{{ businessUnit.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Votre Rôle :</label>
                                         <select name="roles[]"
                                                 class="form-select col-md-12"
-                                                >
+                                        >
                                             {% for role in roles %}
                                                 <option value="{{ role.id }}">{{ role.name }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Votre projet :</label>
                                         <select
                                                 name="projects[]"
                                                 class="form-select col-md-12"
-                                                >
+                                        >
                                             {% for project in projects %}
                                                 <option value="{{ project.id }}">{{ project.name }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
-
-                                    <label>Vos compétences :</label>
-                                    <div class="form_skills_container">
-                                        {% for skill in skills %}
-                                            <label for="skill-{{ skill.id }}" class="form-check form-check-custom-radius">
-                                                <input
-                                                        id="skill-{{ skill.id }}"
-                                                        type="checkbox"
-                                                        name="skills[]"
-                                                        value="{{ skill.id }}"
-                                                />
-                                                {{ skill.name }}
-                                            </label>
-                                        {% endfor %}
-                                    </div>
-                                    {{ form_row(form.submit, {'attr': {'class': 'bg-primary col-md-12 text-center'} }) }}
-                                    {{ form_end(form) }}
                                 </div>
+                            </div>
+
+                            <label>Vos compétences :</label>
+                            <div class="form_skills_container">
+                                {% for skill in skills %}
+                                    <label for="skill-{{ skill.id }}" class="form-check form-check-custom-radius">
+                                        <input
+                                                id="skill-{{ skill.id }}"
+                                                type="checkbox"
+                                                name="skills[]"
+                                                value="{{ skill.id }}"
+                                        />
+                                        {{ skill.name }}
+                                    </label>
+                                {% endfor %}
+                            </div>
+                            {{ form_row(form.submit, {'attr': {'class': 'bg-primary col-md-12 text-center'} }) }}
+                            {{ form_end(form) }}
                         </div>
                     </form>
-                </div>
-                <div class="card-footer">
-                    <div class="stepwizard ">
-                        <div class="stepwizard-row setup-panel">
-                            <div class="stepwizard-step">
-                                <a href="#step-1" type="button" class="btn btn-primary">étape 1</a>
-                            </div>
-                            <div class="stepwizard-step">
-                                <a href="#step-2" type="button" class="btn " disabled="disabled">étape 2</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
