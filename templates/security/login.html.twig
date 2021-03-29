@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    <div class="container-fluid login">
+        <div class="row login-row-margin-top25">
+            <div class="card text-white bg-secondary col-md-4 offset-md-4 col-10 offset-1 cancel-col-padding">
+                <div class="card-header">
+                    Connectez-vous
+                </div>
+                <div class="card-body">
+                    <form action="" method="post" name="login">
+                        <div class="form-group">
+                            <label for="inputEmail">Votre Email</label>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                                   class="form-control" required autofocus>
+                            <label for="inputPassword" class="mt-2">Votre Password</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}"
+                            >
+
+                            {#
+                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                            See https://symfony.com/doc/current/security/remember_me.html
+
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> Remember me
+                                </label>
+                            </div>
+                            #}
+                                <button class="btn btn-md btn-primary col-md-12 text-center mt-4" type="submit">
+                                    Sign in
+                                </button>
+                    </form>
+                </div>
+                {% endblock %}

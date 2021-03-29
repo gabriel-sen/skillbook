@@ -97,6 +97,7 @@ class RegisterController extends AbstractController
                 )->toArray()
             );
 
+            /* Encryptage des mots de passes en base */
             $password = $encoder->encodePassword($user,$user->getPassword()) ;
             $user ->setPassword($password);
             /* test dd($password) ok */

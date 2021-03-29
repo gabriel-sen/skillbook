@@ -8,6 +8,9 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         users_in_memory: { memory: null }
+        users:
+            entity:
+                class: 'App\Entity\User'
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
