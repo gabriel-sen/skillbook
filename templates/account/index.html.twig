@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="card text-white bg-secondary col-md-6 offset-md-3 col-10 offset-1 cancel-col-padding">
+            <div class="card-header">Mon compte</div>
+            <div class="card-body">
+                <p>Bienvenu {{ app.user.firstname }}, <br> C'est dans ce compte que vous allez pouvoir gérer vos informations personnelles</p>
+                <ul>
+                    <li>
+                        <a href="{{ path('account_password') }}"> modifier mon mot de passe </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
