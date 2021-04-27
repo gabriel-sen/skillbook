@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Entity\BusinessUnit;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\DBAL\Connection;
 use Doctrine\Persistence\ManagerRegistry;
 
 class BusinessUnitRepository extends ServiceEntityRepository
@@ -14,12 +14,12 @@ class BusinessUnitRepository extends ServiceEntityRepository
         parent::__construct($registry, BusinessUnit::class);
     }
 
-    public function findAll(): ArrayCollection
+    public function findAllById(array $ids): array
     {
-        return new ArrayCollection(
-            $this->createQueryBuilder('bu')
+        return $this->createQueryBuilder('bu')
+                ->where('bu.id in (:ids)')
+                ->setParameter('ids', $ids, Connection::PARAM_INT_ARRAY)
                 ->getQuery()
-                ->getResult()
-        );
+                ->getResult();
     }
 }

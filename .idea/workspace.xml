@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="655effbf-aacd-4ab5-9238-881a1b122602" name="Default Changelist" comment="login en cours de dev = User.php getRoles ne renvoie pas encore le rôle au front.">
-      <change afterPath="$PROJECT_DIR$/templates/account/password.html.twig" afterDir="false" />
+    <list default="true" id="655effbf-aacd-4ab5-9238-881a1b122602" name="Default Changelist" comment="Création de la page espace membre / modification du MDP / base page liste-fiche">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2acf3537-6c21-434b-9791-2d3243f24f5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2acf3537-6c21-434b-9791-2d3243f24f5f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AcountControllerPhpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AcountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegisterFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegisterFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthentificatorAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthentificatorAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/acount_controller_php/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BusinessUnitRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BusinessUnitRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProjectRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RoleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RoleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SkillRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SkillRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/index.html.twig" afterDir="false" />
     </list>
     <list id="bff854bb-1028-455b-adb7-a0aae8cb7f65" name="Changes by everytimeicob" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +196,13 @@
       <workItem from="1617490698088" duration="594000" />
       <workItem from="1617494037316" duration="598000" />
       <workItem from="1617861554279" duration="10258000" />
-      <workItem from="1618260815908" duration="6161000" />
+      <workItem from="1618260815908" duration="8133000" />
+      <workItem from="1618438995424" duration="3365000" />
+      <workItem from="1618704821829" duration="1064000" />
+      <workItem from="1618828688222" duration="1204000" />
+      <workItem from="1619352455132" duration="3153000" />
+      <workItem from="1619357172519" duration="12392000" />
+      <workItem from="1619427337014" duration="16203000" />
     </task>
     <task id="LOCAL-00001" summary="Création du projet + création de la première home.">
       <created>1614642628270</created>
@@ -234,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616897411741</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Création de la page espace membre / modification du MDP / base page liste-fiche">
+      <created>1618435950408</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618435950408</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +275,7 @@
     <MESSAGE value="Ajout de bootstrap / Création de la page inscription / creation du header conditionné / création du formulaire comportant des EntityType::class qui récupèrent les données depuis les tables /  ajout de jeux de données en BDD." />
     <MESSAGE value="Stepper dans la vue de l'insecription / modification du champs Type de skills pour afficher des btn radios." />
     <MESSAGE value="login en cours de dev = User.php getRoles ne renvoie pas encore le rôle au front." />
-    <option name="LAST_COMMIT_MESSAGE" value="login en cours de dev = User.php getRoles ne renvoie pas encore le rôle au front." />
+    <MESSAGE value="Création de la page espace membre / modification du MDP / base page liste-fiche" />
+    <option name="LAST_COMMIT_MESSAGE" value="Création de la page espace membre / modification du MDP / base page liste-fiche" />
   </component>
 </project>

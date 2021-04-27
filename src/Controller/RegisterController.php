@@ -9,13 +9,13 @@ use App\Repository\ProjectRepository;
 use App\Repository\RoleRepository;
 use App\Repository\SkillRepository;
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 class RegisterController extends AbstractController
 {
@@ -46,55 +46,30 @@ class RegisterController extends AbstractController
         RoleRepository $roleRepository,
         ProjectRepository $projectRepository,
         UserRepository $userRepository
+
     ): Response {
         $user = new User();
 
         $form = $this->createForm(RegisterFormType::class, $user);
-        $form->handleRequest($request);
-
-        $businessUnits = $businessUnitRepository->findAll();
-        $projects = $projectRepository->findAll();
-        $skills = $skillRepository->findAll();
-        $roles = $roleRepository->findAll();
+        $form->handleRequest($request); // Parse la requette, valide les contraintes de l'objet RegisterFormType dans le fichier RegisterFormType.php
 
         if ($form->isSubmitted() && $form->isValid()){
             /** @var User $user */
             $user = $form->getData();
 
-
             $user->register(
-                $businessUnits->matching(
-                    Criteria::create()
-                        ->where(
-                            Criteria::expr()
-                                ->in('id', array_map('intval', $request->request->get('businessUnits', []))
-                            )
-                        )
-                )->toArray(),
-                $skills->matching(
-                    Criteria::create()
-                        ->where(
-                            Criteria::expr()
-                                ->in('id', array_map('intval', $request->request->get('skills', []))
-                            )
-                        )
-                )->toArray(),
-                $projects->matching(
-                    Criteria::create()
-                        ->where(
-                            Criteria::expr()
-                                ->in('id', array_map('intval', $request->request->get('projects', []))
-                            )
-                        )
-                )->toArray(),
-                $roles->matching(
-                    Criteria::create()
-                        ->where(
-                            Criteria::expr()
-                                ->in('id', array_map('intval', $request->request->get('roles', []))
-                            )
-                        )
-                )->toArray()
+                $businessUnitRepository->findAllById(
+                     $request->request->get('businessUnits', [])
+                ),
+                $skillRepository->findAllById(
+                    $request->request->get('skills', [])
+                ),
+                $projectRepository->findAllById(
+                    $request->request->get('projects', [])
+                ),
+                $roleRepository->findAllById(
+                    $request->request->get('roles', [])
+                )
             );
 
             /* Encryptage des mots de passes en base */
@@ -103,16 +78,16 @@ class RegisterController extends AbstractController
             /* test dd($password) ok */
 
 
-
             $userRepository->add($user);
+           return $this->redirectToRoute('liste_user');
         }
 
         return $this->render('register/index.html.twig',[
             'form' => $form->createView(),
-            'businessUnits' => $businessUnits,
-            'projects' => $projects,
-            'skills' => $skills,
-            'roles' => $roles,
+            'businessUnits' => $businessUnitRepository->findAll(),
+            'projects' => $projectRepository->findAll(),
+            'skills' => $skillRepository->findAll(),
+            'roles' => $roleRepository->findAll(),
         ]);
     }
 }

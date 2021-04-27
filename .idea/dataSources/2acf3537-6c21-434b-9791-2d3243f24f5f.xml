@@ -1,8 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="skillbook@127.0.0.1">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.20">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.21">
     <root id="1">
       <ServerVersion>5.7.31</ServerVersion>
+      <Grants>|root||angie||ALTER|G
+|root||root|localhost|ALTER|G
+|root||angie||ALTER ROUTINE|G
+|root||root|localhost|ALTER ROUTINE|G
+|root||angie||CREATE|G
+|root||root|localhost|CREATE|G
+|root||angie||CREATE ROUTINE|G
+|root||root|localhost|CREATE ROUTINE|G
+|root||angie||CREATE TABLESPACE|G
+|root||root|localhost|CREATE TABLESPACE|G
+|root||angie||CREATE TEMPORARY TABLES|G
+|root||root|localhost|CREATE TEMPORARY TABLES|G
+|root||angie||CREATE USER|G
+|root||root|localhost|CREATE USER|G
+|root||angie||CREATE VIEW|G
+|root||root|localhost|CREATE VIEW|G
+|root||angie||DELETE|G
+|root||root|localhost|DELETE|G
+|root||angie||DROP|G
+|root||root|localhost|DROP|G
+|root||angie||EVENT|G
+|root||root|localhost|EVENT|G
+|root||angie||EXECUTE|G
+|root||root|localhost|EXECUTE|G
+|root||angie||FILE|G
+|root||root|localhost|FILE|G
+|root||angie||INDEX|G
+|root||root|localhost|INDEX|G
+|root||angie||INSERT|G
+|root||root|localhost|INSERT|G
+|root||angie||LOCK TABLES|G
+|root||root|localhost|LOCK TABLES|G
+|root||angie||PROCESS|G
+|root||root|localhost|PROCESS|G
+|root||angie||REFERENCES|G
+|root||root|localhost|REFERENCES|G
+|root||angie||RELOAD|G
+|root||root|localhost|RELOAD|G
+|root||angie||REPLICATION CLIENT|G
+|root||root|localhost|REPLICATION CLIENT|G
+|root||angie||REPLICATION SLAVE|G
+|root||root|localhost|REPLICATION SLAVE|G
+|root||angie||SELECT|G
+|root||root|localhost|SELECT|G
+|root||angie||SHOW DATABASES|G
+|root||root|localhost|SHOW DATABASES|G
+|root||angie||SHOW VIEW|G
+|root||root|localhost|SHOW VIEW|G
+|root||angie||SHUTDOWN|G
+|root||root|localhost|SHUTDOWN|G
+|root||angie||SUPER|G
+|root||mysql.session|localhost|SUPER|G
+|root||root|localhost|SUPER|G
+|root||angie||TRIGGER|G
+|root||root|localhost|TRIGGER|G
+|root||angie||UPDATE|G
+|root||root|localhost|UPDATE|G
+|root||angie||grant option|G
+|root||root|localhost|grant option|G
+performance_schema|schema||mysql.session|localhost|SELECT|G
+sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DefaultEngine>MyISAM</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -739,28 +800,15 @@
     <collation id="231" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <user id="232" parent="1" name="angie">
-      <Host>%</Host>
-      <ObjectGrants>ALL PRIVILEGES!
-</ObjectGrants>
-    </user>
+    <user id="232" parent="1" name="angie"/>
     <user id="233" parent="1" name="mysql.session">
       <Host>localhost</Host>
-      <ObjectGrants>SUPER
-SELECT|performance_schema
-SELECT|mysql.user
-</ObjectGrants>
     </user>
     <user id="234" parent="1" name="mysql.sys">
       <Host>localhost</Host>
-      <ObjectGrants>TRIGGER|sys
-SELECT|sys.sys_config
-</ObjectGrants>
     </user>
     <user id="235" parent="1" name="root">
       <Host>localhost</Host>
-      <ObjectGrants>ALL PRIVILEGES!
-</ObjectGrants>
     </user>
     <table id="236" parent="7" name="business_unit">
       <Engine>InnoDB</Engine>

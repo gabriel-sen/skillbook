@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Role;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\DBAL\Connection;
 use Doctrine\Persistence\ManagerRegistry;
 
 class RoleRepository extends ServiceEntityRepository
@@ -14,13 +14,12 @@ class RoleRepository extends ServiceEntityRepository
         parent::__construct($registry, Role::class);
     }
 
-
-    public function findAll(): ArrayCollection
+    public function findAllById(array $ids): array
     {
-        return new ArrayCollection(
-            $this->createQueryBuilder('r')
-                ->getQuery()
-                ->getResult()
-        );
+        return $this->createQueryBuilder( 'r')
+            ->where('r.id in (:ids)')
+            ->setParameter('ids', $ids, Connection::PARAM_INT_ARRAY)
+            ->getQuery()
+            ->getResult();
     }
 }
