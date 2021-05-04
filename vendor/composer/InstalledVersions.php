@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '397b86b5c03e37ca9bd236f8fd029e79ff24672f',
+    'reference' => 'c29bc3c04e98c3f711acbfd662b22a9e8fe2bf87',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '397b86b5c03e37ca9bd236f8fd029e79ff24672f',
+      'reference' => 'c29bc3c04e98c3f711acbfd662b22a9e8fe2bf87',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -186,6 +186,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '56070bebac6e77230ed7d306ad13528e60732871',
+    ),
+    'easycorp/easyadmin-bundle' => 
+    array (
+      'pretty_version' => 'v3.2.9',
+      'version' => '3.2.9.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '92175620303bec3374e9356e5018aa565269fd1f',
     ),
     'egulias/email-validator' => 
     array (
@@ -838,6 +847,15 @@ private static $installed = array (
       ),
       'reference' => 'dc3063ba22c2a1fd2f45ed856374d79114998f91',
     ),
+    'symfony/polyfill-uuid' => 
+    array (
+      'pretty_version' => 'v1.22.1',
+      'version' => '1.22.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9773608c15d3fe6ba2b6456a124777a7b8ffee2a',
+    ),
     'symfony/process' => 
     array (
       'pretty_version' => 'v5.2.3',
@@ -1013,6 +1031,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '5ebbb5f0e8bfaa0b4b37cb25ff97f83b18caf221',
+    ),
+    'symfony/uid' => 
+    array (
+      'pretty_version' => 'v5.2.6',
+      'version' => '5.2.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '47d4347b762f0bab9b4ec02112ddfaaa6d79481b',
     ),
     'symfony/validator' => 
     array (

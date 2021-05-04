@@ -73,6 +73,26 @@ body .navbar{
     Background-color: #0070AD;
 }
 
+.form_form-group--flex{
+    display: flex;
+}
+.form_form-group--flex .form-group {
+    width: 48%;
+}
+.form_form-group--flex .form-group:last-child {
+    width: 52%;
+    padding-left: 30px;
+}
+@media (max-width: 1075px) {
+    .form_form-group--flex{
+        display: block;
+    }
+    .form_form-group--flex .form-group,
+    .form_form-group--flex .form-group:last-child {
+        width: 100%;
+        padding-left: 0px;
+    }
+}
 
 /* login */
 .login-row-margin-top25{

@@ -51,7 +51,12 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity=Role::class, inversedBy="users", cascade={"persist"})
      * @JoinTable(name="user_roles")
      */
-    private $roles;
+    private $roles_cap;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
     /**
      * @ORM\ManyToMany(targetEntity=Skill::class, inversedBy="users", cascade={"persist"})
@@ -75,7 +80,7 @@ class User implements UserInterface
     {
         $this->skills = new ArrayCollection();
         $this->businessUnits = new ArrayCollection();
-        $this->roles = new ArrayCollection();
+        $this->roles_cap = new ArrayCollection();
         $this->projects = new ArrayCollection();
     }
 
@@ -188,24 +193,34 @@ class User implements UserInterface
 
     public function getRoles(): array
     {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
+
         return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
     public function addRole(Role $role): void
     {
-        if ($this->roles->contains($role)) {
+        if ($this->roles_cap->contains($role)) {
             return;
         }
 
-        $this->roles->add($role);
+        $this->roles_cap->add($role);
     }
 
     public function register(
         array $businessUnits,
         array $skills,
         array $projects,
-        array $roles
+        array $roless
     ): void {
         foreach ($businessUnits as $businessUnit) {
             $this->addBusinessUnit($businessUnit);
@@ -216,8 +231,8 @@ class User implements UserInterface
         foreach ($projects as $project) {
             $this->addProject($project);
         }
-        foreach ($roles as $role) {
-            $this->addRole($role);
+        foreach ($roless as $role_cap) {
+            $this->addRole($role_cap);
         }
     }
 
