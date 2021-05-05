@@ -149,7 +149,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getSkills(): ArrayCollection
+    public function getSkills(): Collection
     {
         return $this->skills;
     }
@@ -177,7 +177,7 @@ class User implements UserInterface
         $this->businessUnits->add($businessUnit);
     }
 
-    public function getProject(): ArrayCollection
+    public function getProjects(): Collection
     {
         return $this->projects;
     }
@@ -189,6 +189,11 @@ class User implements UserInterface
         }
 
         $this->projects->add($project);
+    }
+
+    public function getRolesCap(): Collection
+    {
+        return $this->roles_cap;
     }
 
     public function getRoles(): array

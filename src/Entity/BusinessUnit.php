@@ -27,10 +27,15 @@ class BusinessUnit
      */
     private $users;
 
-    public function __construct(string $name)
+    public function __construct(?string $name = null)
     {
         $this->name = $name;
         $this->users = new ArrayCollection();
+    }
+
+    public function setName(string $name)
+    {
+        $this->name = $name;
     }
 
     public function getId(): ?int

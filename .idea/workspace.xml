@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="655effbf-aacd-4ab5-9238-881a1b122602" name="Default Changelist" comment="A la validation du formulaire, on renvoie l'utilisateur vers la page liste. &#10;&#10;Refactoring de la gestion des données du formulaire d'inscription. Maintenant on écris la requette en SQL au lieu de traiter la donnée en PHP. Voiur RegisterController&#10; et les Repository">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountPasswordController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BusinessUnit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Skill.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Skill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/debug.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/debug.html.twig" afterDir="false" />
     </list>
     <list id="bff854bb-1028-455b-adb7-a0aae8cb7f65" name="Changes by everytimeicob" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +208,8 @@
       <workItem from="1619617759218" duration="924000" />
       <workItem from="1619696235150" duration="5481000" />
       <workItem from="1619971106264" duration="9397000" />
-      <workItem from="1620041111385" duration="20343000" />
+      <workItem from="1620041111385" duration="21031000" />
+      <workItem from="1620240824704" duration="7499000" />
     </task>
     <task id="LOCAL-00001" summary="Création du projet + création de la première home.">
       <created>1614642628270</created>

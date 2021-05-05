@@ -5,8 +5,32 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col col-12">
+                <div>{{ user.firstname }}</div>
+                <div>{{ user.lastname }}</div>
+            </div>
+            <div class="col col-12">
                 {% for businessUnit in user.businessUnits %}
                     <div>{{ businessUnit.name }}</div>
+                {% endfor %}
+            </div>
+            <div class="col col-12">
+                {% for roles_cap in user.rolescap %}
+                    <div>{{ roles_cap.name }}</div>
+                {% endfor %}
+            </div>
+            <div class="col col-12">
+                {% for businessUnit in user.businessUnits %}
+                    <div>{{ businessUnit.name }}</div>
+                {% endfor %}
+            </div>
+            <div class="col col-12">
+                {% for project in user.projects %}
+                    <div>{{ project.name }}</div>
+                {% endfor %}
+            </div>
+            <div class="col col-12">
+                {% for skill in user.skills %}
+                    <div>{{ skill.name }}</div>
                 {% endfor %}
             </div>
         </div>

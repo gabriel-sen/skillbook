@@ -3,6 +3,11 @@
 namespace App\Controller;
 
 use App\Form\ChangePasswordType;
+use App\Repository\BusinessUnitRepository;
+use App\Repository\ProjectRepository;
+use App\Repository\RoleRepository;
+use App\Repository\SkillRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,7 +33,11 @@ class AccountPasswordController extends AbstractController
      */
     public function index(
         Request $request,
-        UserPasswordEncoderInterface $encoder
+        UserPasswordEncoderInterface $encoder,
+        SkillRepository $skillRepository,
+        BusinessUnitRepository $businessUnitRepository,
+        RoleRepository $roleRepository,
+        ProjectRepository $projectRepository
     ): Response
     {
         $notification = null;
@@ -51,7 +60,13 @@ class AccountPasswordController extends AbstractController
             }
         }
 
+
+
         return $this->render('account/password.html.twig', [
+            'businessUnits' => $businessUnitRepository->findAll(),
+            'skills' => $skillRepository->findAll(),
+            'projects' => $projectRepository->findAll(),
+            'roles' => $roleRepository->findAll(),
             'form' => $form->createView(),
             'notification' => $notification
         ]);
